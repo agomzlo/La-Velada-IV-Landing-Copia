@@ -1,0 +1,29 @@
+<div class={`fixed w-[200%] h-[200%] inset-0 z-[99999] pointer-events-none contrast-125 brightness-150`}>
+
+</div>
+
+<style>
+    div{
+        background-image: url('./noise.png');
+        animation: noise 1s infinite;
+        mix-blend-mode: multiply;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        div {
+            animation: none;
+        }
+    }
+
+    @keyframes noise {
+        0% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0 0;
+        }
+    }
+</style>

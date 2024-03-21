@@ -1,0 +1,72 @@
+<section class="mt-32 mx-auto flex flex-col justify-center items-center text-center text-primary animate-fade-in animate-delay-500">
+    <h2 class="uppercase text-5xl font-semibold">
+        4 de marzo
+        <span aria-hidden class="hidden md:inline">
+            ·
+        </span> 
+        <br aria-hidden class="block md:hidden">
+       <span>
+            <script is:inline>
+                const END_DATE = 1709575200000;
+                const date = new Date(END_DATE);
+                const localTime = date.toLocaleTimeString('es', { hour: '2-digit', minute: '2-digit' });
+
+                //get current timezone
+                const tzOffset = date.getTimezoneOffset() / 60;
+                const diff = tzOffset  * -1;
+                const gmt = diff >= 0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}`;
+
+                const TZ_DICTIONARY = {
+                    'GMT+1': 'CET',
+                    'GMT+2': 'CEST',
+                    'GMT+3': 'EEST',
+                    'GMT+4': 'MSK',
+                    'GMT+5': 'PKT',
+                    'GMT+6': 'BST',
+                    'GMT+7': 'ICT',
+                    'GMT+8': 'CST',
+                    'GMT+9': 'JST',
+                    'GMT+10': 'AEST',
+                    'GMT+11': 'AEDT',
+                    'GMT+12': 'NZST',
+                    'GMT-1': 'WAT',
+                    'GMT-2': 'CAT',
+                    'GMT-3': 'BRT',
+                    'GMT-4': 'AST',
+                    'GMT-5': 'EST',
+                    'GMT-6': 'CST',
+                    'GMT-7': 'MST',
+                    'GMT-8': 'PST',
+                    'GMT-9': 'AKST',
+                    'GMT-10': 'HST',
+                    'GMT-11': 'SST',
+                    'GMT-12': 'BIT',
+                }
+
+                const timeZone = TZ_DICTIONARY[gmt] ?? gmt;
+
+                const selfScript = document.currentScript;
+                selfScript.parentNode.innerHTML= `${localTime}h ${timeZone}`
+            </script>
+       </span>
+    </h2>
+
+    <h3 class="uppercase text-2xl font-medium flex flex-col max-w-sm mt-6">
+        <span>Evento de Presentación</span>
+        <span>Teatro Victoria (Barcelona)</span>
+    </h3>
+
+    <a 
+        class={`
+            border-primary border-2 font-medium uppercase text-lg
+            px-4 py-1 mt-8
+            hover:bg-primary hover:text-secondary hover:scale-125
+            transition inline-block
+        `}
+        href="https://www.teatrevictoria.com/es/cartelera/c/190_la-velada-del-ano-4.html"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Entradas agotadas
+    </a>
+</section>
